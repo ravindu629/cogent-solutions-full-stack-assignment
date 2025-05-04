@@ -1,7 +1,6 @@
 import path from "path";
 import express from "express";
 import dotenv from "dotenv";
-import cookieParser from "cookie-parser";
 import cors from "cors";
 import mongoose from "mongoose";
 import { fileURLToPath } from "url";
@@ -39,7 +38,6 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser());
 
 // Routes
 app.post("/api/contact", async (req, res) => {
