@@ -2,30 +2,14 @@ import path from "path";
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-import mongoose from "mongoose";
-import { fileURLToPath } from "url";
+import connectDB from "./config/db.js";
 import Contact from "./models/Contact.js";
 
 // Handle __dirname in ES module
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = path.resolve();
 
 // Load environment variables
 dotenv.config();
-
-// MongoDB Connection
-const connectDB = async () => {
-  try {
-    await mongoose.connect(process.env.MONGODB_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-    console.log("Connected to MongoDB Atlas");
-  } catch (err) {
-    console.error("MongoDB connection error:", err);
-    process.exit(1);
-  }
-};
 
 // Connect to DB
 connectDB();
@@ -40,7 +24,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
-app.post("/api/contact", async (req, res) => {
+app.post("/contact", async (req, res) => {
   try {
     const { name, email, phone, message } = req.body;
     const contact = new Contact({ name, email, phone, message });
@@ -54,8 +38,10 @@ app.post("/api/contact", async (req, res) => {
 
 // Serve frontend in production
 if (process.env.NODE_ENV === "production") {
+  // Serve static files from the React app (after it's built)
   app.use(express.static(path.join(__dirname, "/frontend/build")));
 
+  // Serve React app's index.html for any route that doesn't match an API endpoint
   app.get("*", (req, res) =>
     res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
   );
