@@ -25,7 +25,10 @@ const ContactForm = () => {
 
     try {
       // Point to your local backend (or your deployed endpoint)
-      await axios.post("http://localhost:5000/api/contacts", formData);
+      await axios.post(
+        "https://cogent-solutions-full-stack-assignment-2.onrender.com/api/contacts",
+        formData
+      );
       setStatus("Message sent successfully!");
       setFormData({ name: "", email: "", phone: "", message: "" });
     } catch (error) {
