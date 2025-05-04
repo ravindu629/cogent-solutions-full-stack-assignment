@@ -1,11 +1,18 @@
+// server.js
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 import path from "path";
 import Contact from "./models/Contact.js";
+import { fileURLToPath } from "url";
 
+// Config
 dotenv.config();
+
+// Handle __dirname in ES module
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -14,7 +21,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// MongoDB connection
+// MongoDB Connection
 mongoose
   .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
@@ -23,7 +30,7 @@ mongoose
   .then(() => console.log("Connected to MongoDB Atlas"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
-// API route
+// Contact API Route
 app.post("/contact", async (req, res) => {
   try {
     const { name, email, phone, message } = req.body;
@@ -36,14 +43,12 @@ app.post("/contact", async (req, res) => {
   }
 });
 
-const __dirname = path.resolve();
-
 // Serve frontend in production
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "/frontend/build")));
+  app.use(express.static(path.join(__dirname, "frontend", "build")));
 
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(buildPath, "index.html"));
+    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
   });
 } else {
   app.get("/", (req, res) => {
