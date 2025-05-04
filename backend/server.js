@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const dotenv = require("dotenv");
-const path = require("path"); // Required for serving static files
+const path = require("path");
 const Contact = require("./models/Contact");
 
 dotenv.config();
@@ -36,12 +36,13 @@ app.post("/contact", async (req, res) => {
   }
 });
 
-// Serve static React files in production
+// Serve frontend in production
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "/frontend/build")));
+  const buildPath = path.join(__dirname, "frontend", "build");
+  app.use(express.static(buildPath));
 
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
+    res.sendFile(path.resolve(buildPath, "index.html"));
   });
 } else {
   app.get("/", (req, res) => {
