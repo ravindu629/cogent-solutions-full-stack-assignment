@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1247750a.css",
+    "main.js": "/static/js/main.eacb87a2.js",
+    "static/js/453.8ab44547.chunk.js": "/static/js/453.8ab44547.chunk.js",
+    "static/media/speaker-12.jpg": "/static/media/speaker-12.1187f7cbcd722f72ee23.jpg",
+    "static/media/speaker-13.jpeg": "/static/media/speaker-13.c658eba4f798f3e67ecd.jpeg",
+    "static/media/hero-right.png": "/static/media/hero-right.9171bc70178059d7197c.png",
+    "static/media/speaker-15.png": "/static/media/speaker-15.a2af6b07f4d4ba54da73.png",
+    "static/media/speaker-14.jpg": "/static/media/speaker-14.644aea94573d45f85845.jpg",
+    "static/media/speaker-1.png": "/static/media/speaker-1.f22f883018717ec0030e.png",
+    "static/media/award-2.png": "/static/media/award-2.be61873a4610ed8aef9d.png",
+    "static/media/hero.jpg": "/static/media/hero.e7695f801c7fb0c20d48.jpg",
+    "static/media/award-1.png": "/static/media/award-1.f795bbe3c5b97fa954b6.png",
+    "static/media/h-about.jpg": "/static/media/h-about.39448326f91b8d2059d6.jpg",
+    "static/media/award-3.png": "/static/media/award-3.b7e1c6ff42e1de24933c.png",
+    "static/media/award-4.png": "/static/media/award-4.356b496b487def2620da.png",
+    "static/media/lunch.jpg": "/static/media/lunch.71226544d7abaaa46117.jpg",
+    "static/media/speaker-10.jpg": "/static/media/speaker-10.b9b97242a8caa69582b2.jpg",
+    "static/media/speaker-9.jpg": "/static/media/speaker-9.81ab748b1eafb052f5ec.jpg",
+    "static/media/speaker-4.jpg": "/static/media/speaker-4.a294df45c11221a12469.jpg",
+    "static/media/speaker-11.jpg": "/static/media/speaker-11.7589f57eb2dc80317d67.jpg",
+    "static/media/speaker-6.jpg": "/static/media/speaker-6.0ad99f138dcbd4ebf6c2.jpg",
+    "static/media/speaker-3.jpg": "/static/media/speaker-3.ade4fd500d6c570b1bd6.jpg",
+    "static/media/speaker-5.jpg": "/static/media/speaker-5.0a3e9be04626b848412d.jpg",
+    "static/media/logo.png": "/static/media/logo.950cce9b2b4aea01f51f.png",
+    "static/media/speaker-2.jpg": "/static/media/speaker-2.06536e149ffb38bc093c.jpg",
+    "static/media/speaker-8.png": "/static/media/speaker-8.f174e0917ab546dcdbc7.png",
+    "static/media/speaker-7.png": "/static/media/speaker-7.7088c3c5e6c8d25dc44b.png",
+    "static/media/register.jpg": "/static/media/register.40f45a77c4a8790e13d1.jpg",
+    "index.html": "/index.html",
+    "main.1247750a.css.map": "/static/css/main.1247750a.css.map",
+    "main.eacb87a2.js.map": "/static/js/main.eacb87a2.js.map",
+    "453.8ab44547.chunk.js.map": "/static/js/453.8ab44547.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1247750a.css",
+    "static/js/main.eacb87a2.js"
+  ]
+}
