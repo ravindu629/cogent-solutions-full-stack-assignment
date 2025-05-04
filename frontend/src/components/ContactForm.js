@@ -25,7 +25,7 @@ const ContactForm = () => {
 
     try {
       // Point to your local backend (or your deployed endpoint)
-      await axios.post("http://localhost:5000/contact", formData);
+      await axios.post("http://localhost:5000//api/contacts", formData);
       setStatus("Message sent successfully!");
       setFormData({ name: "", email: "", phone: "", message: "" });
     } catch (error) {
