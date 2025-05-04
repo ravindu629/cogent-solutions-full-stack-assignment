@@ -38,8 +38,7 @@ app.post("/contact", async (req, res) => {
 
 // Serve frontend in production
 if (process.env.NODE_ENV === "production") {
-  const buildPath = path.join(__dirname, "frontend", "build");
-  app.use(express.static(buildPath));
+  app.use(express.static(path.join(__dirname, "/frontend/build")));
 
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(buildPath, "index.html"));
